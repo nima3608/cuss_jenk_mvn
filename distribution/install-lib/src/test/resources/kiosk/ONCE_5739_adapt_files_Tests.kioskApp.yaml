@@ -1,0 +1,129 @@
+server:
+    port : ${-kiosk_app.port-}
+    ssl:
+      key-store: ${-key_store.path-}
+      key-store-password: ${-key_store.password-}
+      key-store-type: pkcs12
+management:
+    endpoints:
+        web:
+            exposure:
+                include : liveness, readiness
+
+spring:
+  ssl:
+    bundle:
+      pem:
+        client:
+          truststore:
+            certificate: ${-trust_store.path-}
+#logging:
+#   level:
+#      com.materna.ips.connect : DEBUG
+#      com.materna : DEBUG
+#      org.apache.commons.logging.simplelog.log.org.apache.http.client.protocol.ResponseProcessCookies : ERROR
+#      org.springframework.web.filter.CommonsRequestLoggingFilter : INFO
+#      org.springframework.ws.client.MessageTracing.sent : INFO
+#      org.springframework.ws.client.MessageTracing.received : INFO
+#      #org.springframework.ws.client.MessageTracing.sent : TRACE
+#      #org.springframework.ws.client.MessageTracing.received : TRACE
+
+
+actionProviderService:
+  ws:
+    url: ws://localhost:${-action_proider.port-}/ips/cuss
+    read-timeout: 60
+    connection-timeout: 60
+
+kioskApplication:
+    scFileName: /clientRunLevels.bin
+    cussif: cussif
+    amType: cussif
+    #amType: cussmock
+    siteCheckTaskSecondsintervall: 30
+    companyCode: LH
+    applicationName: SBD
+    country: DE
+    language: EN
+    version: 1.1.1.0
+    slot:
+    kioskName: ${-kiosk.name-}
+    hostName: ${-kiosk.host.name-}
+    firstIPPort: 30134
+    lastIPPort: 30143
+    gzipCompression:
+    chunkedEncoding:
+    httpSocketKeepAlive:
+    httpKeepAlive:
+    reuseHttpClient:
+    cachedHttpClient:
+    showLoggingOnScreen:
+    #private boolean guiTraceStatistic = false;
+    idleConnectionTimeout: 0
+    soTimeout: 0
+    completionDelay: 0
+    conveyorFinishActionsDelay: 500
+    minConveyorCompletionDelay: 500
+    maxConveyorCompletionDelay: 2000
+    remoteKioskConfigUrl:
+    statusInNextActionRequest: false
+    loadResourceInUnavailableState: false
+    loadResourceInActiveState: true
+    allowEmptyResources: true
+    storeRemoteConfigPropertyFile: true
+    platformNotificationUrl:
+    wsPingTimeout: 30000
+    sendLastReceipt: false
+    useOldConveyorInterface: false
+    #enableSslProtocol:
+    cleanupTemdir: false
+    useNetWeight4DisplayWeight: true
+    interferenceUserResetsTimeout: true
+    immediateRescanBoardingPassCount: 0
+    immediateRescanPassportCount: 0
+    immediateRescanAgentBarcodeCount: 0
+    immediateRescanResetsTimeout: false
+    storePPImage: false
+    storeFaceImage: false
+    storeTempFaceImages: false
+    imageDelivery: false
+    sendTheLanguageToTheGUI: false
+    summaryLogging: false
+    imageFilePluginJar:
+    supportDevicesWithSameMediaType: false
+    sessionInterferenceUserResetOkEvent: false
+    dataEventResetsInterferenceUser: true
+    idleScreenId:
+    componentsConfigurationFile:
+    id:
+        name: ${-kiosk.name-}
+        area: ${-kiosk.area-}
+        terminal: ${-kiosk.terminal-}
+        airport: ${-kiosk.airport-}
+        vendor: ${-kiosk.vendor-}
+    cfg:
+        urlList:
+        urlFailoverList:
+        proxyUrl:
+        apiLoggingFileName:
+        apiLoggingFileSize:
+        apiLoggingFileCount:
+        apiLoggingLevel:
+        apiServerPort:
+        apiServerNextserverHosts:
+        apiAirline:
+
+# feign client
+configurationAccess:
+  url: ${-config.server.url-}
+  trust-store: ${-trust_store.path-}
+  trust-store-password: ${-trust_store.password-}
+
+# java client
+configuration-access-api:
+  shared-secret: ${-config.shared_secret-}
+  trust-store: ${-trust_store.path-}
+  trust-store-password: ${-trust_store.password-}
+  cache:
+    enable: true     # default is false
+    time-to-live: 10 # default is 5 minutes

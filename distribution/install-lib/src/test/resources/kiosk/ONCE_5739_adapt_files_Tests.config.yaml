@@ -1,0 +1,36 @@
+application:
+  path: c:\temp\kiosk-tests
+  name: LH-ONCE
+  data:
+    path: xyz
+action_proider:
+  port: 12345
+kiosk:
+  area: 51
+  terminal: terminal_1
+  airport: HND
+  vendor: MAT
+  name: ${-host.name.short-}
+  tenant: LH
+  language: DE
+  country: de
+  mode: SAM
+  host:
+    name: ${-host.ip.v4-}
+kiosk_app:
+  port: 1234
+key_store:
+  path: file:${-application.path-}\localhost-keystore.pkcs12
+  password: "just for unit-testing"
+trust_store:
+  path: file:${-application.path-}\some-truststore.pkcs12
+  password: "just for unit-testing"
+config:
+  server:
+    url: https://example-url.de
+  shared_secret: exampleSecret
+frontend_controller:
+  url: https://frontend-controller.example.de
+proxy:
+  host: some-host
+  port: 123

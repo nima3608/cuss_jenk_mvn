@@ -1,0 +1,35 @@
+clustergroup:
+  name: autotest-docker-system
+  clusters:
+    - once
+  db:
+    actions:
+      on-installation: none
+
+test:
+  omitIpsServices: false
+
+############################################
+# the one and only cluster named "once"
+############################################
+cluster:
+  once:
+    updateable: true
+    services:
+      version: 1.0-once_sprint6_2022_08_30-SNAPSHOT
+    ips-services:
+      instances:
+        list:
+          - app1
+      instance:
+        app1:
+          type: app
+          host: lh-once-qa-2
+          user: massai
+          slot-port: 5033
+    connect-services:
+      hosting-type: docker
+      docker:
+        host: lh-once-qa-2
+        user: once
+        dir: /opt/once/connect/docker

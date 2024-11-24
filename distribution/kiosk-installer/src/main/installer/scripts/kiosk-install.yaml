@@ -1,0 +1,39 @@
+# CUSS Bridge Installer configuration.
+#
+# You can refer to the value of other entries in this file by writing "${-name.of.other.key-}".
+# Example:
+# - "${-application.name-}".
+#
+# Furthermore, the following "virtual" placeholders can be used:
+# - ${-host.name.short-}: 
+#     The name of this kiosk (is expected to be the same as "%COMPUTERNAME%").
+# - ${-host.ip.v4-}: 
+#     The IPV4-address of this kiosk.
+
+application:
+  path: C:\MipsProgram\Applications\UA_CUSS
+  data:
+    path: C:\MipsData\DataStore\UA_CUSS
+  name: CUSS
+  company: UA
+  url: https://uacussnexus.ual.com/manual-home?isCuss=true
+action_provider:
+  port: 9196
+  logging.path: C:/MipsData/DataStore/UA_CUSS/logs
+
+kiosk:
+  host:
+    name: ${-host.ip.v4-}
+  firstIPPort: 9000
+  lastIPPort: 10000
+  
+kiosk_app:
+  port: 10196
+  logging.path: C:/MipsData/DataStore/UA_CUSS/logs  
+  
+trust_store:
+  password: "changeit"   
+  
+proxy:
+  port:  
+  host:

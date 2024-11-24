@@ -1,0 +1,41 @@
+
+clustergroup:
+  name: ci-system
+  clusters:
+    - blue
+    - green
+aws:
+  jumphost:
+    ip: 10.23.206.106
+    user: ec2-user
+
+cluster:
+  blue:
+    updateable: true
+    ips-services:
+      instances:
+        list:
+          - app1
+          - adm1
+      instance:
+        adm1:
+          type: admin
+          host: 10.23.206.103
+          user: massai
+          slot-port: 8031
+        app1:
+          type: app
+          host: 10.23.206.106
+          user: massai
+          slot-port: 5031
+  green:
+    updateable: false
+    ips-services:
+      instances:
+        list: app1
+      instance:
+        app1:
+          type: app
+          host: 10.23.206.106
+          user: massai
+          slot-port: 5032

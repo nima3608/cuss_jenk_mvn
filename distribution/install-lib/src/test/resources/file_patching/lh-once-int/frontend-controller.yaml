@@ -1,0 +1,82 @@
+application:
+    prefix : "pre"
+    agentUrl : "http://localhost:9081"
+    guiPrefix: "The GUI says: "
+    urlEncodingKey: "jR0F0t8prNDWHiLJwa9dYnTgdQ/7zN58XR9bf/J/KJM="
+    urlEncodingIV: "Once_upon_a_time"
+    mainTemplate: "/home/config/static/5046/index.html"
+    errorTemplate: "/home/config/error.html"
+    uiBase: "/5046/"
+    fakeRegulatoryPrefill: true
+    paymentUrl: "http://lh-once-qa-2.materna-ips.com:8197/payment.html"
+    mockAncillaryContinue: false
+    digitalAnalyticsDisabled: true
+    groupApppDummyIntegrationEnabled: true
+    keyStore: "/home/ssl/once-key.p12"
+    keyAlias: "privkey"
+    keyPassword: "{C1}:898FFC57B70F6DA47BA2DDA8AEBE2FC5:2EA3BEBD43F9CE1F8BFDCA180E6B6D04:B4EF58D2C2FF1DE715CC475EFFAA0C0314385F1C4AA1F8463D6200ECC13B76B0AD65FF9D3B5ECE56E4F3D11217854E012466A3C8DEA8F99BCAE41002B6F1BF2F"
+    useOldEncryption: true
+atlas:
+    url: "http://lh-once-qa-2.materna-ips.com:8194"
+configurationAccess:
+    url: "http://lh-once-qa-2.materna-ips.com:8195"
+passenger:
+    url: "http://lh-once-qa-2.materna-ips.com:8192"
+ipsAgent:
+    url: "http://lh-once-qa-2.materna-ips.com:8193"
+acceptance:
+    url: "http://lh-once-qa-2.materna-ips.com:8196"
+sessionContext:
+    url: "http://lh-once-qa-2.materna-ips.com:8199"
+attestation:
+    url: "http://lh-once-qa-2.materna-ips.com:8198"
+regulatory:
+    url: "http://lh-once-qa-2.materna-ips.com:8187"
+documentation:
+    url: "http://lh-once-qa-2.materna-ips.com:8188"
+identification:
+    url: "http://lh-once-qa-2.materna-ips.com:8192"
+ancillary:
+    url: "http://lh-once-qa-2.materna-ips.com:8191"
+seatmap:
+    url: "http://lh-once-qa-2.materna-ips.com:8191"
+irregularity:
+    url: "http://lh-once-qa-2.materna-ips.com:8186"
+
+
+server:
+    port : 8197
+management:
+    endpoints:
+        web:
+            exposure:
+                include : liveness, readiness
+spring:
+   jackson:
+      default-property-inclusion: NON_NULL
+   web:
+     resources:
+       static-locations: file:/home/config/static
+no-logging:
+   config: log4j.xml
+logging:
+   file:
+      name : /home/logs/frontendController.log
+   pattern:
+      rolling-file-name : /home/logs/frontendController-%d{yyyy-MM-dd}.%i.log
+      file : "%d{yy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %X{sessionId} %X{app}%msg%n"
+      console: "%d{yy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %X{sessionId} %X{app}%msg%n"
+   level:
+      com.materna : DEBUG
+      org.zalando.logbook : TRACE
+      root : INFO
+logbook:
+  exclude:
+    - /connect/log-entry
+        - /5046/**
+    - /connect/data/airports
+    - /connect/data/countries
+    - /connect/data/configuration
+        - /connect/main-app/**
+  obfuscate:
+    headers: [cookie]

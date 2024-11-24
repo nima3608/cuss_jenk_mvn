@@ -1,0 +1,13 @@
+server:
+    port: ${-action_provider.port-}
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include : liveness, readiness
+
+service-configuration:
+    mediascanner: false
+    pectab: GUI
+    status: false

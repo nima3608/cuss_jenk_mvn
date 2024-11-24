@@ -1,0 +1,26 @@
+server:
+    port : ${-kiosk_app.port-}
+management:
+    endpoints:
+        web:
+            exposure:
+                include : liveness, readiness
+
+actionProviderService:
+  ws:
+    url: ws://localhost:${-action_provider.port-}/cuss-bridge
+    read-timeout: 60
+    connection-timeout: 60
+
+kioskApplication:
+  amType: cussif
+  companyCode: ${-application.company-}
+  applicationName: ${-application.name-}
+  firstIPPort: ${-kiosk.firstIPPort-}
+  lastIPPort: ${-kiosk.lastIPPort-}
+  resourceTestsBeforeActivation: true
+  immediateRescanBoardingPassCount: 1000
+  immediateRescanPassportCount: 1000
+  #supportDevicesWithSameMediaType: false
+  cardReaderMaskFoid: "2220,377662,473104,520306"
+  # cardReaderMaskDiscretionary: {}

@@ -1,0 +1,3 @@
+aws:
+  installer:
+    host: 10.23.206.105  # host "ips-once-build", created 2023-04

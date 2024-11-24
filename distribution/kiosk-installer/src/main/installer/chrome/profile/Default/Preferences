@@ -1,0 +1,135 @@
+{
+	"autocomplete": {
+		"retention_policy_last_version": 121
+	},
+	"autofill": {
+		"credit_card_enabled": false,
+		"last_version_deduped": 121,
+		"profile_enabled": false
+	},
+	"browser": {
+		"enable_spellchecking": false
+	},
+	"credentials_enable_autosignin": false,
+	"credentials_enable_service": false,
+	"download_bubble": {
+		"partial_view_enabled": false
+	},
+	"net": {
+		"network_prediction_options": 2
+	},
+	"password_manager": {
+		"password_promo_cards_list": [
+			{
+				"id": "password_checkup_promo",
+				"last_time_shown": "0",
+				"number_of_times_shown": 0,
+				"was_dismissed": false
+			},
+			{
+				"id": "passwords_on_web_promo",
+				"last_time_shown": "0",
+				"number_of_times_shown": 0,
+				"was_dismissed": false
+			},
+			{
+				"id": "password_shortcut_promo",
+				"last_time_shown": "13367509328486139",
+				"number_of_times_shown": 1,
+				"was_dismissed": true
+			},
+			{
+				"id": "access_on_any_device_promo",
+				"last_time_shown": "0",
+				"number_of_times_shown": 0,
+				"was_dismissed": false
+			}
+		]
+	},
+	"payments": {
+		"can_make_payment_enabled": false
+	},
+	"prefetch": {
+		"search_prefetch": {
+			"cache": {}
+		}
+	},
+	"privacy_guide": {
+		"viewed": true
+	},
+	"profile": {
+		"avatar_index": 47,
+		"name": "ONCE",
+		"using_default_name": false
+	},
+	"search": {
+		"suggest_enabled": false
+	},
+	"signin": {
+		"allowed": false,
+		"allowed_on_next_startup": false
+	},
+	"spellcheck": {
+		"dictionaries": [],
+		"dictionary": "",
+		"use_spelling_service": false
+	},
+	"sync": {
+		"autofill_wallet_import_enabled_migrated": true,
+		"data_type_status_for_sync_to_signin": {
+			"app_list": false,
+			"app_settings": false,
+			"apps": false,
+			"arc_package": false,
+			"autofill": false,
+			"autofill_profiles": false,
+			"autofill_wallet": false,
+			"autofill_wallet_credential": false,
+			"autofill_wallet_metadata": false,
+			"autofill_wallet_offer": false,
+			"autofill_wallet_usage": false,
+			"bookmarks": false,
+			"contact_info": false,
+			"device_info": false,
+			"dictionary": false,
+			"extension_settings": false,
+			"extensions": false,
+			"history": false,
+			"history_delete_directives": false,
+			"incoming_password_sharing_invitation": false,
+			"managed_user_settings": false,
+			"nigori": false,
+			"os_preferences": false,
+			"os_priority_preferences": false,
+			"outgoing_password_sharing_invitation": false,
+			"passwords": false,
+			"power_bookmark": false,
+			"preferences": false,
+			"printers": false,
+			"printers_authorization_servers": false,
+			"priority_preferences": false,
+			"reading_list": false,
+			"saved_tab_group": false,
+			"search_engines": false,
+			"security_events": false,
+			"segmentation": false,
+			"send_tab_to_self": false,
+			"sessions": false,
+			"sharing_message": false,
+			"themes": false,
+			"user_consent": false,
+			"user_events": false,
+			"web_apps": false,
+			"webauthn_credential": false,
+			"wifi_configurations": false,
+			"workspace_desk": false
+		},
+		"feature_status_for_sync_to_signin": 1
+	},
+	"tracking_protection": {
+		"tracking_protection_3pcd_enabled": false
+	},
+	"translate": {
+		"enabled": false
+	}
+}

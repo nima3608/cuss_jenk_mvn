@@ -1,0 +1,25 @@
+server:
+    port: ${-action_proider.port-}
+management:
+    endpoints:
+        web:
+            exposure:
+                include : liveness, readiness
+
+# feign client
+configurationAccess:
+    url: ${-config.server.url-}
+    trust_store: ${-trust_store.path-}
+    trust_store-password: ${-trust_store.password-}
+
+kiosk:
+    url: ${-frontend_controller.url-}
+    trust_store: ${-trust_store.path-}
+    trust_store-password: ${-trust_store.password-}
+
+# java client
+configuration-access-api:
+  shared-secret: ${-config.shared_secret-}
+  cache:
+    enable: true     # default is false
+    time-to-live: 10 # default is 5 minutes
